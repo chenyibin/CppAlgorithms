@@ -11,9 +11,7 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f34f44-f630-4c5b-98fc-ef16c532073c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MinInRotatedArray/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../MinInRotatedArray/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="48f34f44-f630-4c5b-98fc-ef16c532073c" name="Default" comment="" />
     <ignored path="LetterComboPhoneNum.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
