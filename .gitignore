@@ -74,7 +74,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# CLion Ignores
-.idea/workspace.xml
-.idea/tasks.xml
+# JetBrains project files
+.idea
 
