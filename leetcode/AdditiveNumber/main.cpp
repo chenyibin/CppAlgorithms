@@ -57,18 +57,17 @@ private:
                 return false;
             }
 
-            std::string actual_substr = m_num.substr(term2_end, sum_str.length());
-            if (actual_substr[0] == '0') {
+            // If checked string starts with '0' or
+            // doesn't match the expected sum return false
+            std::string checked_sum = m_num.substr(term2_end, sum_str.length());
+            if (checked_sum[0] == '0' || checked_sum != sum_str) {
                 return false;
             }
-            // Advance or determine that the sequence is not additive
-            if (actual_substr == sum_str) {
-                term2_end = sum_end;
-                term1 = term2;
-                term2 = sum;
-            } else {
-                return false;
-            }
+
+            // Advance to next check
+            term2_end = sum_end;
+            term1 = term2;
+            term2 = sum;
         }
         return true;
     }
