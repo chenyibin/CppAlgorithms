@@ -1,6 +1,6 @@
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
-set(SOURCE_FILES int_merge_sorter_test.cpp)
+set(SOURCE_FILES int_merge_sorter_test.cpp int_quick_sorter_test.cpp)
 
 add_executable(runtests ${SOURCE_FILES})
 

@@ -1,7 +1,3 @@
-//
-// Created by Yibin on 11/26/2015.
-//
-
 #include "int_min_heap.h"
 
 
