@@ -12,30 +12,33 @@ int SuperUglyNumber::nthSuperUglyNumber(int n, std::vector<int>& primes)
     std::vector<int> ugly_numbers;
     ugly_numbers.reserve(n);
 
-    std::unordered_set<int> ugly_numbers_set;
+    std::vector<std::pair<int,std::size_t>> ugly_candidates;
+    for (auto prime : primes) {
+        ugly_candidates.emplace_back(prime, 0);
+    }
 
-    std::vector<int> ugly_candidates = primes;
     std::vector<std::size_t> prime_indices(primes.size(), 0);
 
     ugly_numbers.push_back(1);
     while (ugly_numbers.size() < n) {
-        int min_candidate = ugly_candidates[0];
-        int min_index = 0;
-        for (std::size_t j = 1; j < ugly_candidates.size(); ++j)
+        // Find the smallest candidate
+        int min_candidate = ugly_candidates[0].first;
+        for (std::size_t i = 1; i < ugly_candidates.size(); ++i)
         {
-            if (min_candidate > ugly_candidates[j]) {
-                min_index = j;
-                min_candidate = ugly_candidates[j];
+            if (min_candidate > ugly_candidates[i].first) {
+                min_candidate = ugly_candidates[i].first;
             }
         }
 
-        if (ugly_numbers_set.find(min_candidate) == ugly_numbers_set.end()) {
-            ugly_numbers_set.insert(min_candidate);
-            ugly_numbers.push_back(min_candidate);
-        }
+        ugly_numbers.push_back(min_candidate);
 
-        // Update the used candidate
-        ugly_candidates[min_index] = ugly_numbers[++prime_indices[min_index]] * primes[min_index];
+        // Update the candidates
+        for (size_t j = 0; j < ugly_candidates.size(); ++j) {
+            std::pair<int,std::size_t>& candidate = ugly_candidates[j];
+            if (candidate.first == min_candidate) {
+                candidate.first = primes[j] * ugly_numbers[++candidate.second];
+            }
+        }
     }
     return ugly_numbers[n-1];
 }
