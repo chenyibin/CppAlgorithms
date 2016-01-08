@@ -5,6 +5,6 @@ struct Node
 {
     int data;
     struct Node *next;
-}
+};
 
 #endif //PROBLEMS_NODE_H

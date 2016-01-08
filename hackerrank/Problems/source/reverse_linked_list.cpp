@@ -1,9 +1,10 @@
+#include "linked_lists.h"
 #include "node.h"
 
 /**
  * Reverse a linked list and return pointer to the head
  */
-Node* Reverse(Node* head)
+Node* reverse(Node* head)
 {
     if (head == nullptr) {
         return nullptr;

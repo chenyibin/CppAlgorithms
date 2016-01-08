@@ -14,10 +14,9 @@ int SuperUglyNumber::nthSuperUglyNumber(int n, std::vector<int>& primes)
 
     std::vector<std::pair<int,std::size_t>> ugly_candidates;
     for (auto prime : primes) {
+        // each ugly candidate represents ([prime[i] * multiple, multiple)
         ugly_candidates.emplace_back(prime, 0);
     }
-
-    std::vector<std::size_t> prime_indices(primes.size(), 0);
 
     ugly_numbers.push_back(1);
     while (ugly_numbers.size() < n) {

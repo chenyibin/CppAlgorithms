@@ -3,6 +3,6 @@
 #ifndef PROBLEMS_LINKED_LISTS_H
 #define PROBLEMS_LINKED_LISTS_H
 
-Node* Reverse(Node* head);
+Node* reverse(Node* head);
 
 #endif //PROBLEMS_LINKED_LISTS_H
