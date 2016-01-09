@@ -60,11 +60,13 @@ void IntMinHeap::sink(std::size_t index)
     std::size_t right_child = left_child + 1;
     while (left_child < m_storage.size()) {
         std::size_t min = index;
-        if (m_storage[index] > m_storage[left_child])
+        if (m_storage[min] > m_storage[left_child])
         {
             min = left_child;
         }
-        if (m_storage[min] > m_storage[right_child]) {
+        if (right_child < m_storage.size()
+         && m_storage[min] > m_storage[right_child])
+        {
             min = right_child;
         }
         if (min == index) {
@@ -72,5 +74,7 @@ void IntMinHeap::sink(std::size_t index)
         }
         std::swap(m_storage[min], m_storage[index]);
         index = min;
+        left_child = get_left_child(index);
+        right_child = left_child + 1;
     }
 }
