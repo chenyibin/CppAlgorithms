@@ -13,6 +13,15 @@
  */
 class MinTimeFinishJobs
 {
+    int m_num_assignees;
+    // time taken by each assignee to finish one unit of job
+    int m_assignee_performance;
+    // number of units per job
+    std::vector<int> m_job_units;
+
+    int m_job_max_units;
+    int m_total_job_units;
+
 public:
 
     MinTimeFinishJobs(
@@ -26,13 +35,7 @@ public:
 
 private:
 
-    int m_num_assignees;
-    // time taken by each assignee to finish one unit of job
-    int m_assignee_performance;
-    // number of units per job
-    std::vector<int> m_job_units;
+    bool completable(int time);
 
-    int job_max_units;
-    int total_job_units;
 };
 #endif //BASICS_MIN_TIME_FINISH_JOBS_H
