@@ -1,8 +1,10 @@
 #include <vector>
 
-#ifndef COMBINATORIAL_INT_MERGE_SORTER_H
-#define COMBINATORIAL_INT_MERGE_SORTER_H
+#pragma once
 
+/**
+ * Reviewing Merge Sort
+ */
 class IntMergeSorter
 {
     std::vector<int>& m_data;
@@ -23,7 +25,4 @@ private:
         const std::vector<int>& left,
         const std::vector<int>& right
     );
-
-
 };
-#endif //COMBINATORIAL_INT_MERGE_SORTER_H

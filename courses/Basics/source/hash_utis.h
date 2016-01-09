@@ -1,7 +1,6 @@
 #include <functional>
 
-#ifndef CONTAINERUSAGE_HASH_UTIS_H
-#define CONTAINERUSAGE_HASH_UTIS_H
+#pragma once
 
 template <class T>
 inline void hash_combine(size_t& seed, const T& v)
@@ -26,4 +25,3 @@ template<> struct hash<pair<int,int>>
 };
 
 }
-#endif //CONTAINERUSAGE_HASH_UTIS_H

@@ -3,8 +3,7 @@
 #include <vector>
 #include <sstream>
 
-#ifndef COMBINATORIAL_PRINT_UTILS_H
-#define COMBINATORIAL_PRINT_UTILS_H
+#pragma once
 
 template<class T>
 std::string to_string(const std::vector<T>& vec)
@@ -20,4 +19,3 @@ std::string to_string(const std::vector<T>& vec)
     out << ']';
     return out.str();
 }
-#endif //COMBINATORIAL_PRINT_UTILS_H
