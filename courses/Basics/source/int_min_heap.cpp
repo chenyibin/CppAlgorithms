@@ -25,7 +25,13 @@ void IntMinHeap::delete_min()
 
 int IntMinHeap::get_min() const
 {
+    // just let m_storage throw exception if empty
     return m_storage[1];
+}
+
+bool IntMinHeap::is_empty() const
+{
+    return (m_storage.size() <= 1);
 }
 
 

@@ -15,6 +15,7 @@ public:
     void insert(int value);
     void delete_min();
     int  get_min() const;
+    bool is_empty() const;
 
 private:
 

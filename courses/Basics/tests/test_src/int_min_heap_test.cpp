@@ -19,6 +19,8 @@ TEST(test_min_heap, empty_to_filled_to_empty)
     heap.delete_min();
     ASSERT_EQ(6, heap.get_min());
     heap.delete_min();
+
+    ASSERT_TRUE(heap.is_empty());
 }
 
 TEST(test_min_heap, interleaving_insert_delete)
@@ -51,5 +53,7 @@ TEST(test_min_heap, interleaving_insert_delete)
     heap.delete_min();
     ASSERT_EQ(20, heap.get_min());
     heap.delete_min();
+
+    ASSERT_TRUE(heap.is_empty());
 }
 
