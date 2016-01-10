@@ -7,11 +7,13 @@ set(SOURCE_FILES basics_main.cpp)
 
 add_executable(Basics ${SOURCE_FILES})
 
+include_directories(dstructures)
 include_directories(greedy)
-include_directories(source)
+include_directories(recursion)
 
+add_subdirectory(dstructures)
 add_subdirectory(greedy)
-add_subdirectory(source)
+add_subdirectory(recursion)
 add_subdirectory(tests)
 
-target_link_libraries(Basics greedy source)
+target_link_libraries(Basics dstructures greedy recursion)
